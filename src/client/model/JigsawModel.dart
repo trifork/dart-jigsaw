@@ -1,0 +1,4 @@
+class JigsawModel extends EventTarget {
+
+
+}

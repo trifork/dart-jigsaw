@@ -1,0 +1,90 @@
+#jigsaw {position: absolute; left: 20px; top: 120px;}
+#jigsaw div {
+    background-image: url('../images/porche.png');
+    overflow:none; position: absolute;
+    border: 1px solid black;
+    width:150px; height: 150px;
+    -webkit-transition-property: left, top;
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-in-out;
+    -moz-transition-property: left, top;
+    -moz-transition-duration: 0.3s;
+    -moz-transition-timing-function: ease-in-out;
+
+}
+.active {
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    opacity:1;
+}
+.inactive {
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    opacity:0;
+}
+#jigsaw div#sq00 {background-position:0px    0px; }
+#jigsaw div#sq01 {background-position:-150px 0px}
+#jigsaw div#sq02 {background-position:-300px 0px; }
+#jigsaw div#sq10 {background-position:0px    -150px}
+#jigsaw div#sq11 {background-position:-150px -150px}
+#jigsaw div#sq12 {background-position:-300px -150px}
+#jigsaw div#sq20 {background-position:0px    -300px; }
+#jigsaw div#sq21 {background-position:-150px -300px}
+#jigsaw div#sq22 {background-position:-300px -300px}
+
+#jigsaw div.clear { float: none; display: block;}
+
+#jigsaw div.hole { background-color: white; background-image: none;}
+
+
+.move00 {
+    position: relative;
+    left: 0px;
+    top: 0px;
+}
+.move01 {
+    position: relative;
+    left: 150px;
+    top: 0px;
+}
+.move02 {
+    position: relative;
+    left: 300px;
+    top: 0px;
+}
+
+
+.move10 {
+    position: relative;
+    left: 0px;
+    top: 150px;
+}
+.move11 {
+    position: relative;
+    left: 150px;
+    top: 150px;
+}
+.move12 {
+    position: relative;
+    left: 300px;
+    top: 150px;
+}
+.move20 {
+    position: relative;
+    left: 0px;
+    top: 300px;
+}
+.move21 {
+    position: relative;
+    left: 150px;
+    top: 300px;
+}
+.move22 {
+    position: relative;
+    left: 300px;
+    top: 300px;
+}
+
+
+
+.hidden {display: none;}
