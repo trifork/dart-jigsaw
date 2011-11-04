@@ -9,7 +9,7 @@ class Jigsaw  {
 
   _handleGo(e) {
     print(e);
-}
+  }
 
   void ready() {
     document.query("#go").on.click.add(_handleGo);
