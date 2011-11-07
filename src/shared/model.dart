@@ -5,5 +5,6 @@
 #import("../../dlib/events_base.dart");
 
 #source("model/Pos.dart");
+#source("model/Board.dart");
 #source("model/JigsawModel.dart");
 #source("model/JigsawModelEvents.dart");
