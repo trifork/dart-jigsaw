@@ -24,6 +24,7 @@ class Jigsaw  {
     _controller.init();
     _view.init();
     _model.init();
+
   }
 
   JigsawModel get model() => _model;

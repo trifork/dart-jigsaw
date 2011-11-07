@@ -1,7 +1,17 @@
-class JigsawController extends EventTarget {
+class JigsawController extends e.EventTarget {
 
   JigsawModel model;
   JigsawView view;
   JigsawController(this.model, this.view);
 
+  void init() {
+    view.on["move"].add((e) {
+        var pos = e.payload['loc'];
+        model.hole = pos;
+      });
+    view.on["shuffle"].add((e) => model.shuffle());
+    view.on["back"].add((e) => model.stepback());
+    view.on["start"].add((e) => model.reset());
+
+  }
 }
