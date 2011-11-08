@@ -3,13 +3,32 @@ class Board implements Map<Pos, Pos> {
   final Pos holeKey;
   final int _size;
 
+  Map get perm() => _permutation;
+
+  Board.from(Map<Pos,Pos> perm):
+    this._permutation = perm,
+    this.holeKey = new Pos(0,0),
+    this._size = floor(Math.sqrt(perm.length));
+
   Board(this._size):
     this._permutation = {},
-    this.holeKey = new Pos(0,0);
+    this.holeKey = new Pos(0,0)
+      {
+        forEachPos((p) => this._permutation[p] = p);
+      }
 
   int get size() => _size;
 
   Pos get holeLocation() => this[this.holeKey];
+
+  bool move(Pos newLoc) {
+    Pos old = this.holeLocation;
+    if (isValidMove(newLoc, old)) {
+      swap(newLoc,old);
+      return true;
+    }
+    return false;
+  }
 
   void swap(Pos p1, Pos p2) {
     Pos k1 = key_for_value(_permutation,p1);
@@ -18,6 +37,13 @@ class Board implements Map<Pos, Pos> {
     _permutation[k2] = p1;
   }
 
+  bool isSolved() {
+    bool fin = true;
+    forEachPos((p) {
+        fin = fin && (p == this[p]);
+      });
+    return fin;
+  }
 
   List<Pos> validMoves(Pos from) {
     var moves = [new Pos(from.row-1,from.col),

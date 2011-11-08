@@ -17,6 +17,10 @@ class JigsawView extends e.EventTarget {
     document.query("#shuffle").
       on.click.add((e) => this.dispatch(new JEvent("shuffle",null)));
 
+    document.query("#reset").
+      on.click.add((e) => this.dispatch(new JEvent("reset",null)));
+
+
     document.query("#back").
       on.click.add((e) => this.dispatch(new JEvent("back",null)));
 

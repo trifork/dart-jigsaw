@@ -9,10 +9,7 @@ class JigsawModel extends EventTarget {
     this._history = [];
 
   init() {
-    _board.forEachPos((p) {
-        _change(p,null);
-        this._board[p] = p;
-      });
+
   }
 
   Board get board() => _board;
@@ -54,14 +51,14 @@ class JigsawModel extends EventTarget {
     return e;
   }
 
-  // void shuffle() {
-  //   int idx = size*size*size;
-  //   for (int i=0;i<idx;i++) {
-  //     List<Pos> v = validMoves(this.hole);
-  //     int r = _randInt(v.length);
-  //     this.hole = v[r];
-  //   }
-  // }
+  void shuffle() {
+    int idx = size*size*size;
+    for (int i=0;i<idx;i++) {
+      List<Pos> v = _board.validMoves(this.hole);
+      int r = randomInt(v.length);
+      move(v[r]);
+    }
+  }
 
   String toString() => "Jigsaw[${str(this._board)}]";
 }
