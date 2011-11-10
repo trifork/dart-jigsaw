@@ -27,17 +27,20 @@ function update_dep_url() {
   else
       (cd $DEP; git pull)
   fi
-  
+
   cd ..
-  
+
   if [ -d $DEP ]; then
       chmod -R +w  $DEP
       rm -Rf $DEP
   fi
 
-  if [ -d $DEPS_DIR/$DEP/src ]; then 
-      cp -R $DEPS_DIR/$DEP/src $DEP
-      chmod -R a-w $DEP
+  if [ -h $DEP ]; then
+      rm $DEP
+  fi
+
+  if [ -d $DEPS_DIR/$DEP/src ]; then
+      ln -s $DEPS_DIR/$DEP/src $DEP
   fi
 
   if [ -f $DEPS_DIR/$DEP/$CONFIG_FILE ]; then
