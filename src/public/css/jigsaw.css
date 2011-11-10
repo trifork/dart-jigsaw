@@ -34,52 +34,52 @@
 
 #jigsaw div.clear { float: none; display: block;}
 
-#jigsaw div.hole { background-color: white; background-image: none;}
+#jigsaw div.hole { background-image: none;}
 
 
-.move00 {
+.loc00 {
     position: relative;
     left: 0px;
     top: 0px;
 }
-.move01 {
+.loc01 {
     position: relative;
     left: 150px;
     top: 0px;
 }
-.move02 {
+.loc02 {
     position: relative;
     left: 300px;
     top: 0px;
 }
 
 
-.move10 {
+.loc10 {
     position: relative;
     left: 0px;
     top: 150px;
 }
-.move11 {
+.loc11 {
     position: relative;
     left: 150px;
     top: 150px;
 }
-.move12 {
+.loc12 {
     position: relative;
     left: 300px;
     top: 150px;
 }
-.move20 {
+.loc20 {
     position: relative;
     left: 0px;
     top: 300px;
 }
-.move21 {
+.loc21 {
     position: relative;
     left: 150px;
     top: 300px;
 }
-.move22 {
+.loc22 {
     position: relative;
     left: 300px;
     top: 300px;

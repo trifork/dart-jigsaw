@@ -7,30 +7,32 @@
  */
 class Jigsaw  {
 
-  _handleGo(e) {
-    print(e);
-  }
+  static final Jigsaw APP = const Jigsaw();
+  static final int JIGSAW_SIZE = 3;
+  const Jigsaw();
+
+  JigsawModel _model;
+  JigsawView  _view;
+  JigsawController _controller;
 
   void ready() {
-    document.query("#go").on.click.add(_handleGo);
-    // document.query("#status").innerHTML = "Slider Menu Sample App";
-    // sliderMenu = new SliderMenu(menuItems, (selectedText) {
-    //   document.query("#message").innerHTML = "Selected '${selectedText}'";
-    // });
-    // document.query("#menu").nodes.add(sliderMenu.node);
+    //document.query("#go").on.click.add(_handleGo);
+    _model = new JigsawModel(JIGSAW_SIZE, "images/porche.png");
+    _view = new JigsawView(this.model);
+    _controller = new JigsawController(this.model,this.view);
 
-    // document.query('#next').on.click.add((e) {
-    //   sliderMenu.selectNext(true);
-    // });
-
-    // document.query('#prev').on.click.add((e) {
-    //   sliderMenu.selectPrevious(true);
-    // });
-
-    // sliderMenu.enterDocument();
+    _controller.init();
+    _view.init();
+    _model.init();
   }
 
+  JigsawModel get model() => _model;
+  JigsawView get view() => _view;
+  JigsawController get ctrl() => _controller;
+
+
   static void main() {
-    Dom.ready( () { new Jigsaw().ready();} );
+
+    Dom.ready(Jigsaw.APP.ready);
   }
 }

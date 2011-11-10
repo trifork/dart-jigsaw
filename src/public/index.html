@@ -7,28 +7,31 @@
   </head>
   <body>
     <h1>Welcome to Jigsaw</h1>
-    <div id="menu" >
+    <div id="menu" class="inactive hidden" >
     <p>Please enter your username</p>
         <input type="text" class="username">
         <button id="go">Go!</button>
     </div>
-    <div id="buttons" class="inactive">
-        <button id="shuffle" >Shuffle!</button>
-        <button id="start">Start!</button>
+    <div id="buttons" class="active">
+        <button id="start">Start</button>
+        <button id="reset" >Reset</button>
+        <button id="back" >Go back</button>
+        <button id="shuffle" >Shuffle</button>
+
     </div>
-    <div id="jigsaw" class="inactive hidden">
-        <div id="sq00" class="move00 hole"></div>
-        <div id="sq01" class="move01"></div>
-        <div id="sq02" class="move02"></div>
-        <div id="sq10" class="move10"></div>
-        <div id="sq11" class="move11"></div>
-        <div id="sq12" class="move12"></div>
-        <div id="sq20" class="move20"></div>
-        <div id="sq21" class="move21"></div>
-        <div id="sq22" class="move22"></div>
+    <div id="jigsaw" class="active">
+        <div id="sq00" class="loc00 hole"></div>
+        <div id="sq01" class="loc01"></div>
+        <div id="sq02" class="loc02"></div>
+        <div id="sq10" class="loc10"></div>
+        <div id="sq11" class="loc11"></div>
+        <div id="sq12" class="loc12"></div>
+        <div id="sq20" class="loc20"></div>
+        <div id="sq21" class="loc21"></div>
+        <div id="sq22" class="loc22"></div>
     </div>
 
-    <!--<script type="text/javascript" src="out/Jigsaw.dart.app.js"></script>-->
-    <script type="text/javascript" src="tmp/jigsaw.js"></script>
+    <script type="text/javascript" src="out/Jigsaw.dart.app.js"></script>
+    <!--<script type="text/javascript" src="tmp/jigsaw.js"></script>-->
   </body>
 </html>
